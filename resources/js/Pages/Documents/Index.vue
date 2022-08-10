@@ -25,7 +25,7 @@
                 <th class="bg-gray-50 uppercase text-gray-400 border-b text-left px-4 py-2 font-light text-sm w-14">#</th>
                 <th class="bg-gray-50 uppercase text-gray-400 border-b text-left px-4 py-2 font-light text-sm">Name</th>
                 <th class="bg-gray-50 uppercase text-gray-400 border-b text-left px-4 py-2 font-light text-sm">Description</th>
-                <th class="bg-gray-50 uppercase text-gray-400 border-b text-left px-4 py-2 font-light text-sm w-40">&nbsp;</th>
+                <th class="bg-gray-50 uppercase text-gray-400 border-b text-left px-4 py-2 font-light text-sm w-60">&nbsp;</th>
               </tr>
             </thead>
 
@@ -35,7 +35,7 @@
                 <td class="border-b text-left px-4 py-2 font-normal text-gray-800 text-md">{{ document.name }}</td>
                 <td class="border-b text-left px-4 py-2 font-normal text-gray-800 text-md">{{ document.description }}</td>
                 <td class="border-b text-right px-4 py-2 font-normal text-gray-800 text-md">
-                  Show  Delete
+                  Show  <Link :href="route('templates.create')">Template</Link>  Delete
                 </td>
               </tr>
 

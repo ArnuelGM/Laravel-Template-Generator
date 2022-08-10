@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\DocumentController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\TemplatesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,5 +38,6 @@ Route::middleware([
 
     Route::resource('documents', DocumentController::class);
 
+    Route::resource('templates', TemplatesController::class);
 
 });
