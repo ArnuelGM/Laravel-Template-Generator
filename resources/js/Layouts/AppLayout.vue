@@ -15,6 +15,13 @@ defineProps({
 
 const showingNavigationDropdown = ref(false);
 
+const menus = ref([
+    {
+        label: 'Documents',
+        route: 'documents.index'
+    }
+]);
+
 const switchToTeam = (team) => {
     Inertia.put(route('current-team.update'), {
         team_id: team.id,
@@ -51,6 +58,9 @@ const logout = () => {
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <JetNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
+                                </JetNavLink>
+                                <JetNavLink v-for="menu in menus" :href="route(menu.route)" :active="route().current(menu.route)" :key="menu.route">
+                                    {{ menu.label }}
                                 </JetNavLink>
                             </div>
                         </div>
@@ -211,6 +221,9 @@ const logout = () => {
                         <JetResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </JetResponsiveNavLink>
+                        <JetResponsiveNavLink v-for="menu in menus" :href="route(menu.route)" :active="route().current(menu.route)" :key="menu.route">
+                            {{ menu.label }}
+                        </JetResponsiveNavLink>
                     </div>
 
                     <!-- Responsive Settings Options -->
@@ -297,7 +310,7 @@ const logout = () => {
 
             <!-- Page Heading -->
             <header v-if="$slots.header" class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto py-3 px-4 sm:px-3 lg:px-8 flex items-center justify-between">
                     <slot name="header" />
                 </div>
             </header>
